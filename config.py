@@ -45,7 +45,7 @@ FEEDBACK_CHANNEL = int(getenv("FEEDBACK_CHANNEL",-1002734592501))
 
 #MOMGO DATABASE URL HERE
 DB_URI = getenv("DATABASE_URL", "mongodb+srv://shanaya:godfather11@cluster0.t3yd7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DB_NAME = getenv("DATABASE_NAME", "sparrow_v2")
+DB_NAME = getenv("DATABASE_NAME", "sparrow_v3")
 
 #SET YOUR FSUB EXAMPLE = {-1002341255671:"PENDING1" , -1002273566865: "PENDING2"} , KEEP IT MT {} FOR DISABLE 
 RFSUB = {-1002565558833:"𝘈𝘯𝘯𝘰𝘶𝘯𝘤𝘦𝘮𝘦𝘯𝘵 "}
