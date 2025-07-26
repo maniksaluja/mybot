@@ -24,7 +24,7 @@ async def create_order(amount:int, user_id:int, subscription_type: str, plan_typ
         "customer": {
             "name": "Customer",
             "email": "xyz@example.com",
-            "contact":"+919200000000"
+            "contact":"+919208366004"
         },
         "notify":{
             "sms":False,
