@@ -1,0 +1,22 @@
+#!/bin/bash
+
+echo "Starting simplified VPS setup..."
+
+# Root check
+if [ "$EUID" -ne 0 ]; then 
+  echo "Please run as root (sudo)"
+  exit 1
+fi
+
+# Update and upgrade
+apt update && apt upgrade -y
+
+# Install essential packages
+apt install -y python3-pip git
+
+# Create and activate virtual environment
+python3 -m venv  newbot
+source newbot/bin/activate 
+pip3 install -U -r requirements.txt
+
+echo "VPS setup complete. Virtual environment activated and dependencies installed."

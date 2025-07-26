@@ -1,0 +1,21 @@
+aiofiles
+aiohttp
+aiosqlite
+asyncio
+cachetools
+cryptography
+fastapi
+motor
+psutil
+pymongo
+pyrofork
+python-dotenv
+pytz
+qrcode
+razorpay
+requests
+setuptools==69.5.1
+shortzy
+speedtest-cli
+tgcrypto; sys_platform != "win32"
+uvicorn

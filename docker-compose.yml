@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: file_sharing_telegram_bot
+    restart: always
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+    env_file:
+      - .env
+    networks:
+      - bot_network
+
+networks:
+  bot_network:
+    driver: bridge
