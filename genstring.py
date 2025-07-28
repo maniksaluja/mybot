@@ -3,8 +3,38 @@ import os
 
 from pyrogram import Client as c
 
-API_ID = input("\nEnter Your API_ID:\n > ")
-API_HASH = input("\nEnter Your API_HASH:\n > ")
+try:
+    from config import API_ID, API_HASH
+    
+    if not API_ID or not API_HASH:
+        raise ValueError("API_ID or API_HASH is empty in config.py")
+    
+    if not str(API_ID).isdigit():
+        raise ValueError("API_ID must be a numeric value")
+    
+    if not isinstance(API_HASH, str) or len(API_HASH) < 10:
+        raise ValueError("API_HASH must be a valid string with at least 10 characters")
+    
+    print("Using valid API_ID and API_HASH from config.py")
+    
+except (ImportError, ValueError, AttributeError) as e:
+    print(f"Config issue: {e}")
+    print("Please enter API credentials manually:")
+    
+    while True:
+        API_ID = input("\nEnter Your API_ID:\n > ").strip()
+        if API_ID.isdigit():
+            API_ID = int(API_ID)
+            break
+        else:
+            print("API_ID must be a numeric value. Please try again.")
+    
+    while True:
+        API_HASH = input("\nEnter Your API_HASH:\n > ").strip()
+        if len(API_HASH) >= 10:
+            break
+        else:
+            print("API_HASH must be at least 10 characters long. Please try again.")
 
 print("\n\n Enter Phone number when asked.\n\n")
 
